@@ -1,0 +1,11 @@
+import sqlite3
+connection=sqlite3.connect("Academy.db")
+cursor=connection.cursor()
+print("Displaying the name of the Highest Average")
+cursor.execute("SELECT sname,max(AVERAGE) FROM student ")
+result=cursor.fetchall()
+print(result)
+print("Displaying the name of the Least Average")
+cursor.execute("SELECT sname,min(AVERAGE) FROM student ")
+result=cursor.fetchall()
+print(result)
